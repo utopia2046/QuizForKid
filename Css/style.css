@@ -1,0 +1,90 @@
+body {
+    font-family: "Microsoft YaHei", "微软雅黑", Calibri, Verdana,  sans-serif;
+    font-size: 14pt;
+}
+
+h1 {
+    padding-top: 20px;
+    text-align: center;
+    font-size: 32pt;
+    color: #FFFFFF;
+    text-shadow: 3px 3px 2px #202020;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 10px;
+}
+
+tr {
+    border-bottom: 3px solid #F67F21;
+}
+
+span {
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.questionsContainer {
+    background-color: #F67F21;
+    background-image: url("../Images/bg.jpg");
+    background-repeat: repeat-y;
+    width: 1024px;
+    margin: 10px, 20px, 10px, 20px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.section {
+    margin-left: 360px;
+    margin-right: auto;
+    background-color: #FFFFFF;
+    opacity: 0.9;
+    width: 280px;
+    border-radius: 25px;
+}
+
+.questionTable {
+    opacity: 1;
+    background-color: #FFFFFF;
+    width: 200px;
+    margin-left: 35px;
+    padding-right:25px;
+}
+
+.button {
+    margin-left: 432px;
+    margin-right: auto;
+    width: 120px;
+    height: 40px;
+    background-color: #FFFFFF;
+    color: #F67F21;
+    border-radius: 20px;
+    font-size: 16pt;
+    font-weight: bold;
+    line-height: 38px;
+    text-align: center;
+}
+
+.audio {
+    color: #F67F21;
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+.audioBar {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.textGlow {
+    text-shadow: 0px 0px 5px #F0F020;
+}
+
+.index {
+    font-size: 10pt;
+}
+
+.currentLine {
+    background-color: #FABF90;
+}
