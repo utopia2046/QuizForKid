@@ -94,7 +94,7 @@ function generateAllMultiplyQuestions() {
     var questions = [];
 
     for (var i = 2; i < 10; i++) {
-        for (var j = 2; j < 20; j++) {
+        for (var j = 2; j < 100; j++) {
             var q = {};
             q.number1 = i;
             q.number2 = j;
