@@ -1,0 +1,87 @@
+<html>
+<head>
+  <title>Quiz</title>
+  <meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/quizStyle.css" />
+</head>
+
+<body>
+
+  <h1>口算</h1>
+
+  <div class="start" data-bind="visible: !isStarted()">
+	<div id="startButton">开始</div>
+  </div>
+  
+  <div class="quizCard" data-bind="visible: isStarted() && !showSummary()">
+    <div class="header">
+     <span class="pull-left">
+      <span>题目总数：</span>
+      <span data-bind="text: total"></span>
+      <span>正确：</span>
+      <span data-bind="text: countCorrect"></span>
+      <span>错误：</span>
+      <span data-bind="text: countWrong"></span>
+      <span>时间：</span>
+     </span>
+     <span class="pull-right">
+      <span>剩余时间：</span>
+      <span data-bind="text: remainingTime"></span>
+     </span>
+    </div>
+    <div class="question">
+      <span data-bind="text: number1"></span>
+      <span data-bind="text: operator"></span>
+      <span data-bind="text: number2"></span>
+      <span>=</span>
+      <input id="answerInput" data-bind="value: userInput, valueUpdate: 'afterkeydown'" />
+      <span data-bind="visible: hasRemains">
+        <span class='quizText'>余</span>
+        <input data-bind="value: userInput2, valueUpdate: 'afterkeydown'" />
+      </span>
+      <span id="check" class='quizText button' data-bind="enabled: !showAnswer()">确定</span>
+    </div>
+    <div class="answer" data-bind="visible: showAnswer">
+      <span class="glyphicon glyphicon-ok pull-right correct" data-bind="visible: isCorrect()"></span>
+      <span class="glyphicon glyphicon-remove pull-right wrong" data-bind="visible: !isCorrect()"></span>
+      <span data-bind="visible: !isCorrect()">
+        <span>答案：</span>
+        <span data-bind="text: answer"></span>
+        <span data-bind="visible: hasRemains">余数：</span>
+        <span data-bind="visible: hasRemains, text: remains"></span>
+      </span>
+	    <div class="next">
+	      <span>
+	        <a id="result" class="pull-right" data-bind="visible: isTimeUp()">看结果</a>
+		    <a id="next" class="pull-right" data-bind="visible: !isTimeUp()">下一题</a>
+	      </span>
+	    </div>
+    </div>
+  </div>
+
+  <div class="summary" data-bind="visible: showSummary()">
+  	<ul>
+  		<li>正确：<span data-bind="text: countCorrect"></span></li>
+  		<li>错误：<span data-bind="text: countWrong"></span></li>
+  		<li>总题目数：<span data-bind="text: total"></span></li>
+  	<ul>
+  </div>
+
+ 	<div class="wrongQues">
+ 		<p data-bind="visible: hasWrongQues">做错或未答的题：</p>
+  	<ul data-bind="foreach: wrongQues">
+  		<li data-bind="text: questionText"></li>
+  	<ul>
+	</div>
+
+  <script src="Scripts/jquery.min.js"></script>
+  <script src="Scripts/jquery.plugin.js"></script>
+  <script src="Scripts/jquery.timer.js"></script>
+  <script src="Scripts/knockout-latest.js"></script>
+  <script src="Scripts/question.js"></script>
+  <script src="Scripts/viewModel.js"></script>
+  <script src="Scripts/main.js"></script>
+
+</body>
+</html>
